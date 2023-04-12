@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css'>
+    <title>Welcome to Fertilizer Prediction.com</title>
+</head>
+<body>
+
+<!--header area starts-->
+
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top" >
+    <div class="container">
+        <a href="{{ url_for('index') }}" class="navbar-brand fw-bolder fs-4">FertilizerPrediction</a>
+        <ul class="navbar-nav mx-auto">
+            <li><a href="#home" class="nav-link fw-semibold">Home</a></li>
+            <li><a href="#prediction" class="nav-link fw-semibold">Prediction</a></li>
+            <li><a href="#about" class="nav-link fw-semibold">About</a></li>
+            <li><a href="#contact" class="nav-link fw-semibold">Contact</a></li>
+        </ul>
+        <p class="text-secondary pt-3">Hotline: 01871372010</p>
+    </div>
+</nav>
+<div class="carousel slide py-5 bg-dark" id="home">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{{ url_for('static', filename='image/1.jpg') }}" alt="" class="w-100">
+            <div class="carousel-caption my-caption mt-5">
+                <h1>Welcome to FertilizerPrediction.com</h1>
+                <p>Thanks for visiting our website. To use fertilizer prediction system click on Predict Fertilizer Button</p>
+                <a href="#prediction" class="btn btn-danger">Predict Fertilizer</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--header area end-->
+
+<!--prediction area starts-->
+<section class="py-5 bg-dark" id="prediction">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header bg-info">
+                        <h3 class="text-center">Fertilizer Prediction System</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="/predict">
+                            <div class="row mb-3">
+                                <label class="col-md-3" for="name">Nitrogen</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="N" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-md-3" for="email">Phosphorous</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="P" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-md-3" for="password">Potassium</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="K" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-md-3" for="phone">Temperature</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="temperature" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-md-3" for="phone">Humidity</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="humidity" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-md-3" for="phone">Ph</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="ph" required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label class="col-md-3"></label>
+                                <div class="col-md-9">
+                                    <input type="submit" class="btn btn-primary" value="Predict Now"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--prediction area ends-->
+
+<!--about area starts-->
+<section class="bg-dark py-5" id="about">
+    <div class="container py-5">
+        <h1 class="text-white text-center pb-5"> About Us</h1>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <div class="card text-white bg-dark border-0 rounded-0">
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='image/naimur.jpg') }}" alt="" class="w-100 card-img rounded-0">
+                        <h2 class=" pt-3">Md. Naimur Rahman</h2>
+                        <h5 class=" ">Software Engineer</h5>
+                        <a href="https://www.linkedin.com/in/naimurrahman2521/" class="text-primary fw-bold text-decoration-none" target="_blank">Connect LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-dark border-0 rounded-0">
+                    <div class="card-body text-center">
+                        <img src="{{ url_for('static', filename='image/shofiqul.JPG') }}" alt="" class="w-100 card-img rounded-0">
+                        <h2 class=" pt-3">Shofiqul Islam</h2>
+                        <h5 class=" ">Software Engineer</h5>
+                        <a href="https://www.linkedin.com/in/shofiqul-islam-04ba83254/" class="text-primary fw-bold text-decoration-none" target="_blank">Connect LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</section>
+
+<!--about area ends-->
+
+<!--contact area starts-->
+<section class="bg-dark py-5 border-bottom" id="contact">
+    <div class="container py-5">
+        <h1 class="text-white text-center pb-5">Contact Info</h1>
+        <div class="row">
+            <div class="col-md-6 text-white">
+                <h3>Contact Information</h3>
+                <hr>
+                <address>
+                    <b>Direct Contact : </b> City University, Birulia-Akran Rd, 1343
+                    <br>
+                    <b>Phone Number : </b>01871372010
+                    <br>
+                    <b>Email Address : </b> fertilizerpredict@info.com
+                </address>
+            </div>
+            <div class="col-md-6 text-white">
+                <h3>Google Map Location</h3>
+                <hr>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.4655630766897!2d90.30755281427834!3d23.873104389996193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c2102dc1cd51%3A0x6f95e92193fc8978!2sCity%20University!5e0!3m2!1sen!2sbd!4v1676969278726!5m2!1sen!2sbd" width="550" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--contact area ends-->
+<!--footer area starts-->
+<footer class="bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ">
+                <p class="pt-3 text-white text-center">Copyright@fertilizerprediction.com &copy;All Right Reserved. Design & Developed By Naimur Rahman & Shofiqul Islam</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>
